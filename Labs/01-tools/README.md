@@ -12,8 +12,8 @@ Link to your `Digital-electronics-2` GitHub repository:
    * `&` AND
    * `^` XOR
    * `~` NOT
-   * `<<` 
-   * `>>`
+   * `<<` shift bit to the left
+   * `>>` shift bit to the right
 
 2. Complete truth table with operators: `|`, `&`, `^`, `~`
 
