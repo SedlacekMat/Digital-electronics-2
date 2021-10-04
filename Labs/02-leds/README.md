@@ -64,20 +64,30 @@ int main(void)
 {
     // Green LED at port B
     // Set pin as output in Data Direction Register...
-    DDRB = DDRB | (1<<LED_GREEN);
+    	DDRB = DDRB | (1<<LED_GREEN);
     // ...and turn LED off in Data Register
-    PORTB = PORTB & ~(1<<LED_GREEN);
+    	PORTB = PORTB & ~(1<<LED_GREEN);
 
     // Configure the second LED at port C
-    // WRITE YOUR CODE HERE
+	DDRC= DDRC | (1<<LED_RED);
+	PORTC = PORTC |=(1<<LED_RED);
+
+
+    // Configure Push button at port D and enable internal pull-up resistor
 
     // Infinite loop
     while (1)
-    {
-        // Pause several milliseconds
-        _delay_ms(BLINK_DELAY);
+    {	
+		_delay_ms(BLINK_DELAY);
 
-        // WRITE YOUR CODE HERE
+        	PORTB = PORTB |=(1<<LED_GREEN); //led green high
+		PORTC = PORTC |=(1<<LED_RED);
+		
+		_delay_ms(BLINK_DELAY);
+		
+		PORTB = PORTB & ~(1<<LED_GREEN); //led green low
+		PORTC = PORTC & ~(1<<LED_RED);
+
     }
 
     // Will never reach this
@@ -121,7 +131,7 @@ int main(void)
 		
 		_delay_ms(BLINK_DELAY);
 		
-		PORTB = PORTB & ~(1<<LED_GREEN); //led green high
+		PORTB = PORTB & ~(1<<LED_GREEN); //led green low
 		PORTC = PORTC & ~(1<<LED_RED);
 		}
 
