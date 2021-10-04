@@ -96,9 +96,9 @@ int main(void)
 {
     // Green LED at port B
     // Set pin as output in Data Direction Register...
-    DDRB = DDRB | (1<<LED_GREEN);
+    	DDRB = DDRB | (1<<LED_GREEN);
     // ...and turn LED off in Data Register
-    PORTB = PORTB & ~(1<<LED_GREEN);
+    	PORTB = PORTB & ~(1<<LED_GREEN);
 
     // Configure the second LED at port C
 	DDRC= DDRC | (1<<LED_RED);
@@ -116,7 +116,7 @@ int main(void)
 		{
 		_delay_ms(BLINK_DELAY);
 
-        PORTB = PORTB |=(1<<LED_GREEN); //led green high
+        	PORTB = PORTB |=(1<<LED_GREEN); //led green high
 		PORTC = PORTC |=(1<<LED_RED);
 		
 		_delay_ms(BLINK_DELAY);
