@@ -31,15 +31,15 @@ Link to your `Digital-electronics-2` GitHub repository:
  */
 /** @brief Stop timer, prescaler 000 --> STOP */
 #define TIM0_stop()           TCCR0B &= ~((1<<CS02) | (1<<CS01) | (1<<CS00));
-/** @brief Set overflow 4ms, prescaler 001 --> 1 */
+/** @brief Set overflow 16us, prescaler 001 --> 1 */
 #define TIM0_overflow_16us()   TCCR0B &= ~((1<<CS02) | (1<<CS01)); TCCR0B |= (1<<CS00);
-/** @brief Set overflow 33ms, prescaler 010 --> 8 */
+/** @brief Set overflow 128us, prescaler 010 --> 8 */
 #define TIM0_overflow_128us()  TCCR0B &= ~((1<<CS02) | (1<<CS00)); TCCR1B |= (1<<CS01);
-/** @brief Set overflow 262ms, prescaler 011 --> 64 */
+/** @brief Set overflow 1024us, prescaler 011 --> 64 */
 #define TIM0_overflow_1024us() TCCR0B &= ~(1<<CS02); TCCR0B |= (1<<CS01) | (1<<CS00);
-/** @brief Set overflow 1s, prescaler 100 --> 256 */
+/** @brief Set overflow 4096us, prescaler 100 --> 256 */
 #define TIM0_overflow_4096us()    TCCR0B &= ~((1<<CS01) | (1<<CS00)); TCCR0B |= (1<<CS02);
-/** @brief Set overflow 4s, prescaler // 101 --> 1024 */
+/** @brief Set overflow 16384us, prescaler // 101 --> 1024 */
 #define TIM0_overflow_16384us()    TCCR0B &= ~(1<<CS01); TCCR0B |= (1<<CS02) | (1<<CS00);
 /** @brief Enable overflow interrupt, 1 --> enable */
 #define TIM0_overflow_interrupt_enable()  TIMSK0 |= (1<<TOIE0);
