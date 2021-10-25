@@ -1,15 +1,15 @@
-# Lab 5: YOUR_FIRSTNAME FAMILYNAME
+# Lab 5: Matyáš Sedláček
 
 Link to your `Digital-electronics-2` GitHub repository:
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/05-segment](https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/05-segment)
 
 
 ### 7-segment library
 
 1. In your words, describe the difference between Common Cathode and Common Anode 7-segment display.
-   * CC SSD
-   * CA SSD
+   * CC SSD - Segments light up when the input is HIGH
+   * CA SSD - Segments light up when the input is LOW
 
 2. Code listing with syntax highlighting of two interrupt service routines (`TIMER1_OVF_vect`, `TIMER0_OVF_vect`) from counter application with at least two digits, ie. values from 00 to 59:
 
