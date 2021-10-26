@@ -20,7 +20,23 @@ Link to your `Digital-electronics-2` GitHub repository:
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // WRITE YOUR CODE HERE
+    uint8_t ones = 0;
+uint8_t tens = 0;
+ISR(TIMER1_OVF_vect)
+{
+	ones++;
+	if(ones==10)
+	{
+		tens++;
+		ones = 0;
+		if (tens==6)
+		{
+			tens = 0;
+			ones = 0;
+		}
+	}
+
+}
 
 }
 ```
