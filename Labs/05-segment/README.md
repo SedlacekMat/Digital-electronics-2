@@ -44,10 +44,19 @@ ISR(TIMER1_OVF_vect)
  **********************************************************************/
 ISR(TIMER0_OVF_vect)
 {
-    static uint8_t pos = 0;
-
-    // WRITE YOUR CODE HERE
-
+	static uint8_t pos = 0;  // This line will only run the first time
+	
+	if(pos == 0)
+	{
+		SEG_update_shift_regs(units,pos);
+		pos = 1;
+	}
+	else
+	{
+		SEG_update_shift_regs(tens,pos);
+		pos = 0;
+	}
+	
 }
 ```
 
