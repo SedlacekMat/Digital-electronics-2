@@ -29,9 +29,25 @@ Link to this file in your GitHub repository:
 ```c
 /* Variables ---------------------------------------------------------*/
 // Custom character definition
-uint8_t customChar[16] = {
-    // WRITE YOUR CODE HERE
-
+byte customCharDown[8] = {
+	0b01110,
+	0b01110,
+	0b00100,
+	0b01110,
+	0b10101,
+	0b00100,
+	0b01010,
+	0b10001
+};
+byte customCharUp[8] = {
+	0b01110,
+	0b01110,
+	0b10101,
+	0b01110,
+	0b00100,
+	0b00100,
+	0b01010,
+	0b10001
 };
 ```
 
