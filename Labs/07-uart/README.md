@@ -9,13 +9,13 @@ Link to this file in your GitHub repository:
 
    | **Operation** | **Register(s)** | **Bit(s)** | **Description** |
    | :-- | :-: | :-: | :-- |
-   | Voltage reference    | ADMUX | REFS1:0 | 00: ..., 01: AVcc voltage reference (5V), ... |
+   | Voltage reference    | ADMUX | REFS1:0 | 00: AREF, Internal Vref turned off, 01: AVcc voltage reference (5V), 11: Internal 1.1V Voltage Reference with external capacitor at AREF pin |
    | Input channel        | ADMUX | MUX3:0 | 0000: ADC0, 0001: ADC1, ... |
-   | ADC enable           | ADCSRA |  |  |
-   | Start conversion     |  |  |  |
-   | ADC interrupt enable |  |  |  |
-   | ADC clock prescaler  |  | ADPS2:0 | 000: Division factor 2, 001: 2, 010: 4, ...|
-   | ADC 10-bit result    |  |  |  |
+   | ADC enable           | ADCSRA | ADEN7 | 1:turn on |
+   | Start conversion     | ADCSRA | ADSC6 | 1:starts conversion |
+   | ADC interrupt enable | ADCSRA | ADIE3 |  |
+   | ADC clock prescaler  | ADCSRA | ADPS2:0 | 000: Division factor 2, 001: 2, 010: 4, ..., 111: 128|
+   | ADC 10-bit result    | ADCH/ADCL | 9:8/7:0 |  |
 
 1. Complete table with voltage divider, calculated, and measured ADC values for all five push buttons.
 
