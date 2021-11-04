@@ -21,12 +21,12 @@ Link to this file in your GitHub repository:
 
    | **Push button** | **PC0[A0] voltage** | **ADC value (calculated)** | **ADC value (measured)** |
    | :-: | :-: | :-: | :-: |
-   | Right  | 0&nbsp;V | 0   |  |
-   | Up     | 0.495&nbsp;V | 101 |  |
-   | Down   | 0.2405&nbsp;V | 49 |  |
-   | Left   | 0.3939&nbsp;V | 81 |  |
-   | Select | 0.6363&nbsp;V | 130 |  |
-   | none   | 5&nbsp;V | 1024 |  |
+   | Right  | 0&nbsp;V | 0   | 0 |
+   | Up     | 0.495&nbsp;V | 101 | 145 |
+   | Down   | 0.2405&nbsp;V | 49 | 329 |
+   | Left   | 0.3939&nbsp;V | 81 | 507 |
+   | Select | 0.6363&nbsp;V | 130 | 743 |
+   | none   | 5&nbsp;V | 1023 | 1023 |
 
 2. Code listing of ACD interrupt service routine for sending data to the LCD/UART and identification of the pressed button. Always use syntax highlighting and meaningful comments:
 
