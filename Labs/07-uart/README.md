@@ -1,8 +1,8 @@
-# Lab 7: YOUR_FIRSTNAME LASTNAME
+# Lab 7: Matyáš Sedláček
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/07-uart/README.md](https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/07-uart/README.md)
 
 
 ### Analog-to-Digital Conversion
@@ -13,10 +13,10 @@ Link to this file in your GitHub repository:
    | :-: | :-: | :-: | :-: |
    | Right  | 0&nbsp;V | 0   |  |
    | Up     | 0.495&nbsp;V | 101 |  |
-   | Down   |       |     |  |
-   | Left   |       |     |  |
-   | Select |       |     |  |
-   | none   |       |     |  |
+   | Down   | 0.2405&nbsp;V | 49 |  |
+   | Left   | 0.3939&nbsp;V | 81 |  |
+   | Select | 0.6363&nbsp;V | 130 |  |
+   | none   | 5&nbsp;V | 1024 |  |
 
 2. Code listing of ACD interrupt service routine for sending data to the LCD/UART and identification of the pressed button. Always use syntax highlighting and meaningful comments:
 
