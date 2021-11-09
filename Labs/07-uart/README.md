@@ -5,18 +5,6 @@ Link to this file in your GitHub repository:
 [https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/07-uart/README.md](https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/07-uart/README.md)
 
 
-### Analog-to-Digital Conversion
-
-   | **Operation** | **Register(s)** | **Bit(s)** | **Description** |
-   | :-- | :-: | :-: | :-- |
-   | Voltage reference    | ADMUX | REFS1:0 | 00: AREF, Internal Vref turned off, 01: AVcc voltage reference (5V), 11: Internal 1.1V Voltage Reference with external capacitor at AREF pin |
-   | Input channel        | ADMUX | MUX3:0 | 0000: ADC0, 0001: ADC1, ... |
-   | ADC enable           | ADCSRA | ADEN7 | 1:turn on |
-   | Start conversion     | ADCSRA | ADSC6 | 1:starts conversion |
-   | ADC interrupt enable | ADCSRA | ADIE3 |  |
-   | ADC clock prescaler  | ADCSRA | ADPS2:0 | 000: Division factor 2, 001: 2, 010: 4, ..., 111: 128|
-   | ADC 10-bit result    | ADCH/ADCL | 9:8/7:0 |  |
-
 1. Complete table with voltage divider, calculated, and measured ADC values for all five push buttons.
 
    | **Push button** | **PC0[A0] voltage** | **ADC value (calculated)** | **ADC value (measured)** |
