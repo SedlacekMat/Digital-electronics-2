@@ -27,12 +27,33 @@ ISR(ADC_vect)
 {
     uint16_t value = 0;
     char lcd_string[4] = "0000";
-
+	//char lcd_string_hex[3] = "000";
+	char lcd_clear[8] = "        ";
+	lcd_gotoxy(8, 0);
+	lcd_puts(lcd_clear);
+	
     value = ADC;                  // Copy ADC result to 16-bit variable
     itoa(value, lcd_string, 10);  // Convert decimal value to string
-
-    // WRITE YOUR CODE HERE
-
+	lcd_gotoxy(8, 0); lcd_puts(lcd_string);
+	uart_puts(lcd_string);
+	uart_puts("/n/r");
+	//hex
+	itoa(value, lcd_string, 16);
+    lcd_gotoxy(13, 0); lcd_puts(lcd_string);
+	uart_puts(lcd_string);
+	uart_puts("/n/r");
+	//pressedButt
+	lcd_gotoxy(8, 1);
+	lcd_puts(lcd_clear);
+	lcd_gotoxy(8, 1);
+	if (value > 1020) {lcd_puts("NONE    ");uart_puts("NONE    ");uart_puts("/n/r");}
+	else if (value > 600) {lcd_puts("SELECT  ");uart_puts("SELECT  ");uart_puts("/n/r");}
+	else if (value > 390) {lcd_puts("LEFT    ");uart_puts("LEFT    ");uart_puts("/n/r");}
+	else if (value > 200) {lcd_puts("DOWN    ");uart_puts("DOWN    ");uart_puts("/n/r");}
+	else if (value > 80)  {lcd_puts("UP      ");uart_puts("UP      ");uart_puts("/n/r");}
+	else {lcd_puts("RIGHT   ");uart_puts("RIGHT   ");uart_puts("/n/r");}
+	
+	
 }
 ```
 
