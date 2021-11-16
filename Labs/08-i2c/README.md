@@ -29,18 +29,36 @@ Link to this file in your GitHub repository:
 ISR(TIMER1_OVF_vect)
 {
     static state_t state = STATE_IDLE;  // Current state of the FSM
-    static uint8_t addr = 7;            // I2C slave address
+    static uint8_t addr = 0;            // I2C slave address
     uint8_t result = 1;                 // ACK result from the bus
     char uart_string[2] = "00"; // String for converting numbers by itoa()
+	  static uint8_t number_of_devices = 0;
 
     // FSM
     switch (state)
     {
     // Increment I2C slave address
     case STATE_IDLE:
-        addr++;
         // If slave address is between 8 and 119 then move to SEND state
-
+		
+		if ((addr>7)&(addr<120))
+		{
+			state = STATE_SEND;
+		}
+		else if (addr<8)
+		{
+			uart_puts("RA");
+			uart_puts("  ");
+		}
+		else if (addr == 120)
+		{
+			uart_puts("\r\n\rNumber of devices : ");
+			itoa(number_of_devices,uart_string,10);
+			uart_puts(uart_string);
+			uart_puts("\r\n\r ");
+			number_of_devices = 0;
+		}
+		addr++;
         break;
     
     // Transmit I2C slave address and get result
@@ -56,14 +74,31 @@ ISR(TIMER1_OVF_vect)
         twi_stop();
         /* Test result from I2C bus. If it is 0 then move to ACK state, 
          * otherwise move to IDLE */
+		if (result == 0)
+		{
+			state = STATE_ACK;
+		}
+		else
+		{
+			
+			uart_puts("--");
+			uart_puts("  ");
+			state=STATE_IDLE;
+			
+		}
 
         break;
 
     // A module connected to the bus was found
     case STATE_ACK:
         // Send info about active I2C slave to UART and move to IDLE
-
-        break;
+		itoa(addr,uart_string,16);
+		uart_puts(uart_string);
+		uart_puts("  ");
+        number_of_devices++;
+		state = STATE_IDLE;
+		
+		break;
 
     // If something unexpected happens then move to IDLE
     default:
