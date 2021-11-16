@@ -1,8 +1,8 @@
-# Lab 8: YOUR_FIRSTNAME LASTNAME
+# Lab 8: MATYÁŠ SEDLÁČEK
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/08-i2c/README.md](https://github.com/SedlacekMat/Digital-electronics-2/tree/main/Labs/08-i2c/README.md)
 
 ### Arduino Uno pinout
 
@@ -14,7 +14,7 @@ Link to this file in your GitHub repository:
    * SPI pins
    * external interrupt pins INT0, INT1
 
-   ![your figure](Images/arduino_uno_pinout.png)
+   ![your figure](Images/ard.png)
 
 ### I2C
 
